@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fund Me App</title>
+        <link rel="shortcut icon" href="./assets/images/LX Coin.png"
+            type="image/x-icon">
+        <link rel="stylesheet" href="./assets/css/style.css">
+
+        <!-- Animate CSS -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+            async />
+
+        <!-- Jquery -->
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+            integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </head>
+
+    <body>
+        <script src="./assets/js/index.js" type="module"></script>
+        <section>
+            <div class="container">
+
+                <div class="row row-s">
+                    <div class="col-7 col-s-12">
+                        <div class="fund-me-app-wrapper animate__animated
+                            animate__bounceInLeft">
+                            <div class="crypto-main-wrapper">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <div class="crypto-icon-wrapper">
+                                            <div
+                                                class="crypto-icon-image-wrapper">
+                                                <img src="./assets/images/LX Coin.png" alt="LX"
+                                                    srcset="./assets/images/LX Coin.png">
+                                            </div>
+                                            <h1 class="crypto-icon-name">LX 365
+                                                - APR 15%</h1>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="status-label animate__animated animate__flipInX">
+                                            <span id="dappStatus">Offline!</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="crypto-data-wrapper">
+                                    <div class="row">
+                                        <!-- <div class="col-3">
+                                            <div class="content-wrapper">
+                                                <span class="light-font-color">Total
+                                                    Locked</span>
+                                                <h3>25,730,589</h3>
+                                                <h2>LX</h2>
+                                                <span class="light-font-color">$124,150,77</span>
+                                            </div>
+                                        </div> -->
+                                        <div class="col-3">
+                                            <span class="light-font-color">Pool
+                                                Duration</span>
+                                            <h3>90 Days</h3>
+                                            <span class="light-font-color">288
+                                                days</span><br />
+                                            <span id="countdown-timer"
+                                                class="light-font-color"
+                                                data-time="">07:06:44</span>
+                                        </div>
+                                        <div class="col-3">
+                                            <span class="light-font-color">Early
+                                                Witdrawal</span><br />
+                                            <span class="light-font-color">fee</span>
+                                            <h3>25%</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="stake-wrapper">
+                                <div class="contract-address">
+                                    <h3>Account: <span class="light-font-color" id="showAccount"></span></h3>
+                                    <br>
+                                </div>
+                                <p class="light-font-color-2">Staking locks up your assets to participate and help maintain the security of that network's blockchain. In exchange for locking up your assets and participating in the network validation, validators receive rewards in that cryptocurrency known as staking rewards</p>
+                                <br>
+                                <p class="light-font-color-2">Note: Connect to wallet to stake the token for 30 or 90 days</p>
+                                <!-- <div class="row">
+                                    <div class="col-6">
+                                        <div class="content-wrapper">
+                                            <span class="light-font-color-2">Total
+                                                Locked</span>
+                                            <h3>25,730,589</h3>
+                                            <h2>LX</h2>
+                                            <span class="light-font-color-2">$124,150,77</span>
+                                        </div>
+                                        <br>
+                                        <br>
+                                        <div class="content-wrapper">
+                                            <span class="light-font-color-2">Share</span>
+                                            <h2>0.00%</h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="stake-rewards-wrapper">
+                                            <div class="content-wrapper">
+                                                <span
+                                                    class="light-font-color-2">Pending</span><br
+                                                    />
+                                                <span
+                                                    class="light-font-color-2">rewards</span>
+                                                <h2>0 LX</h2>
+                                                <span
+                                                    class="light-font-color-2">$0.00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3 col-s-12">
+                        <div class="fund-me-app-wrapper animate__animated
+                            animate__bounceInRight">
+                            <div class="sidebar-wrapper">
+                                <h1>Amount</h1>
+                                <div class="stake-amount-wrapper">
+                                    <div class="amount-quantity-wrapper">
+                                        <input class="input-number-decrement"
+                                            value="-" data-min="0">
+                                        <input id="standard"
+                                            class="input-number" type="text"
+                                            value="0">
+                                        <input class="input-number-increment"
+                                            value="+" data-max="999999">
+                                    </div>
+                                    <div class="stake-per-wrapper">
+                                        <div class="row">
+                                            <div class="col-3">
+                                                <span>25%</span>
+                                            </div>
+                                            <div class="col-3">
+                                                <span>50%</span>
+                                            </div>
+                                            <div class="col-3">
+                                                <span>100%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="your-balance">Balance:
+                                    <span data-balance=""> 0 LX</span>
+                                </p>
+
+                                <p class="withdrawal-fee-percentage"
+                                    data-withdrwa-fee="">Early Withdrawal fee:
+                                    25%
+                                </p>
+
+                                <div class="button-wrapper">
+                                    <button id="connectButton"
+                                        class="connect-button" type="button"
+                                        data-connect="">Connect</button>
+                                </div>
+
+                                <div class="select">
+                                    <select id="stakeDays">
+                                        <option class="stakeDays" value="30">30
+                                            Days</option>
+                                        <option class="stakeDays" value="90">90
+                                            Days</option>
+                                    </select>
+                                </div>
+
+                                <div id="stakeButton" class="button-wrapper">
+                                    <button id="stake" class="secondary-button">stake</button>
+                                    <button id="unstake"
+                                        class="secondary-button">unstake</button>
+                                </div>
+
+                                <div class="buy-button-wrapper">
+                                    <a href="" class="buy-tokens"
+                                        data-buy-token="">BUY LX Tokens</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+    </body>
+
+</html>

@@ -1,0 +1,477 @@
+/* CSS Reset */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+/* Root */
+
+html {
+    font-size: 62.5%;
+}
+
+:root {
+    --primary-color: #ffffff;
+    --secondary-color: #f2f2f2;
+    --light-color: #b39ebb;
+    --bg-primary: #0f0f11;
+    --bg-secondary: #1a191e;
+    --bg-main: #5b3786;
+    --background-gradient: linear-gradient(30deg, #f39c12 30%, #f1c40f);
+    --gray: #34495e;
+    --darkgray: #2c3e50;
+
+}
+
+/* Scroll Bar */
+::-webkit-scrollbar-track {
+    border: .1rem solid black;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar {
+    width: 1rem;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--bg-main);
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--primary-color);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    margin: 2rem auto;
+    padding: 5rem;
+    max-width: 111.4rem;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.col-7 {
+    width: 69.33%;
+}
+
+.col-6 {
+    width: 49.33%;
+}
+
+.col-3 {
+    width: 29.33%;
+}
+
+.fund-me-app-wrapper {
+    overflow: hidden;
+    min-height: 65rem;
+    border-radius: 3rem;
+    background-color: var(--bg-secondary);
+}
+
+.crypto-main-wrapper {
+    background-color: var(--bg-main);
+    padding: 4rem 3rem 5rem 3rem;
+}
+
+.crypto-icon-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.crypto-icon-image-wrapper {
+    width: 5rem;
+    height: auto;
+}
+
+.crypto-icon-image-wrapper img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1.crypto-icon-name {
+    color: var(--primary-color);
+    font-size: 3rem;
+    font-weight: bolder;
+    padding-left: 1.5rem;
+}
+
+.crypto-icon-wrapper {
+    padding-right: 1.5rem;
+}
+
+.status-label {
+    text-align: right;
+}
+
+.status-label span {
+    padding: 1rem;
+    color: #000000;
+    font-size: 2rem;
+    font-weight: bolder;
+    background-color: #f15bb5;
+    border-radius: .5rem;
+}
+
+.crypto-data-wrapper {
+    padding-top: 3rem;
+    font-size: 1.8em;
+}
+
+.crypto-data-wrapper .row {
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.content-wrapper h3,
+.content-wrapper h2 {
+    color: var(--secondary-color);
+}
+
+span.light-font-color {
+    color: var(--light-color);
+}
+
+span.light-font-color-2 {
+    color: #4f4e53;
+}
+
+.stake-wrapper {
+    padding: 5rem 3rem 8rem;
+    font-size: 1.5em;
+}
+
+.stake-wrapper .row {
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.stake-rewards-wrapper {
+    font-size: 1.2em;
+    padding: 2.5rem 3rem 3rem;
+    background: black;
+    border-radius: 3rem;
+    max-width: max-content;
+    min-width: 20rem;
+}
+
+.sidebar-wrapper {
+    padding: 2rem 3rem 3rem;
+}
+
+.sidebar-wrapper h1 {
+    font-size: 2em;
+}
+
+.stake-amount-wrapper {
+    margin: 2rem 1rem 1.2rem;
+    padding: 2rem;
+    border-radius: .4rem;
+    background: var(--bg-primary);
+}
+
+.stake-per-wrapper {
+    font-size: 1.4em;
+    color: var(--secondary-color);
+}
+
+#add-amount {
+    padding-bottom: 2rem;
+}
+
+p.your-balance {
+    font-size: 1.5em;
+    text-align: right;
+    padding: 0 1.5rem;
+    color: #4f4e53;
+}
+
+.withdrawal-fee-percentage {
+    font-size: 1.8em;
+    text-align: center;
+    color: #4f4e53;
+    padding: 3rem 2rem;
+}
+
+#stakeButton{
+    display: none;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.button-wrapper {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.connect-button {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 2em;
+    font-weight: 600;
+    color: #f2f2f2;
+    background: #f15bb5;
+    border: none;
+    border: .2rem solid #f15bb5;
+    padding: 2rem 5rem;
+    border-radius: .3rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.connect-button:hover {
+    background-color: transparent;
+    border: .2rem solid #f15bb5;
+
+}
+
+.secondary-button {
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    margin: 0 0.5rem;
+    color: #000000;
+    border-radius: .5rem;
+    background-color: #00bbf9;
+    border: .2rem solid #00bbf9;
+    transition: all 0.3s ease-in-out;
+}
+
+.secondary-button:hover {
+    color: #00bbf9;
+    background-color: transparent;
+}
+
+.buy-button-wrapper {
+    font-size: 2rem;
+    margin-top: 5rem;
+    text-align: center;
+}
+
+a.buy-tokens {
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #00bbf9;
+}
+
+/* Select Option Style */
+select {
+    /* Reset Select */
+    appearance: none;
+    outline: 0;
+    border: 0;
+    box-shadow: none;
+    /* Personalize */
+    flex: 1;
+    padding: 0 1em;
+    color: #fff;
+    background-color: var(--darkgray);
+    background-image: none;
+    cursor: pointer;
+}
+
+/* Remove IE arrow */
+select::-ms-expand {
+    display: none;
+}
+
+/* Custom Select wrapper */
+.select {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 3em;
+    border-radius: .25em;
+    overflow: hidden;
+}
+
+/* Arrow */
+.select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1em;
+    background-color: #34495e;
+    transition: .25s all ease;
+    pointer-events: none;
+}
+
+/* Transition */
+.select:hover::after {
+    color: #f39c12;
+}
+
+/*NUMBER INPUTS */
+
+.amount-quantity-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5rem 0;
+}
+
+.input-number {
+    width: 8rem;
+    vertical-align: top;
+    text-align: center;
+    outline: none;
+    font-size: 1.5rem;
+    border: 0;
+    color: var(--bg-main);
+    font-weight: bold;
+}
+
+.input-number,
+.input-number-decrement,
+.input-number-increment {
+    height: 3rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    box-shadow: .3rem .4rem 0 0 rgba(0, 0, 0, 0.08);
+}
+
+.input-number-decrement,
+.input-number-increment {
+    font-size: 1.5rem;
+    display: inline-block;
+    width: 4rem;
+    line-height: 2.6rem;
+    background: var(--secondary-color);
+    color: gray;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+}
+
+.input-number-decrement:active,
+.input-number-increment:active {
+    background: #ddd;
+}
+
+.input-number-decrement {
+    border-right: none;
+    border-radius: .4rem 0 0 .4rem;
+    margin-right: -.4rem;
+
+}
+
+.input-number-increment {
+    border-left: none;
+    border-radius: 0 .4rem .4rem 0;
+    margin-left: -.4rem;
+}
+
+
+/*BUTTONS */
+
+#buttons {
+    padding-top: 3.5rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 26rem;
+}
+
+input:focus {
+    outline: 0;
+}
+
+input#reset-button,
+input#submit-button {
+    color: #fff;
+    font-size: 80%;
+    font-weight: 400;
+    -webkit-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+    text-transform: uppercase;
+    border: none;
+    margin: auto;
+    padding: 1.2rem 1rem .8rem 1rem;
+    width: 10rem;
+}
+
+input#submit-button {
+    background-color: #48A684;
+    display: inline-block;
+}
+
+input#submit-button:hover {
+    background-color: #51b490;
+    cursor: pointer;
+}
+
+input#reset-button {
+    background-color: #70B7A2;
+    display: inline-block;
+}
+
+input#reset-button:hover {
+    background-color: #7eccb5;
+    cursor: pointer;
+}
+
+.animate__animated.animate__flipInX{
+    animation-duration: 4s;
+}
+
+
+/* For Tablets */
+@media only screen and (max-width: 80rem) {
+
+    html {
+        font-size: 50.25%;
+    }
+
+    .container {
+        padding: 2rem;
+    }
+
+}
+
+
+/* For Mobile Phones */
+
+@media only screen and (max-width: 60rem) {
+
+    html {
+        font-size: 50.25%;
+    }
+
+    .container {
+        padding: 2rem;
+    }
+
+    .row-s {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .col-s-12 {
+        width: 100%;
+    }
+
+    .fund-me-app-wrapper {
+        margin-top: 4rem;
+    }
+
+}
