@@ -7,6 +7,7 @@ const unstakeButton = document.getElementById('unstake')
 const showAccount = document.getElementById('showAccount')
 const stakedisable = document.getElementById('stakeButton')
 const dappStatus = document.getElementById('dappStatus')
+const showBalance = document.getElementById("showBalance")
 
 connectButton.onclick = connect
 stakeButton.onclick = stake
@@ -42,6 +43,8 @@ async function connect() {
     connectButton.innerHTML = 'Connected'
     const accounts = await ethereum.request({ method: 'eth_accounts' })
     showAccount.innerHTML = accounts
+    const balance = await contract.balanceOf(accounts.toString())
+    showBalance.innerHTML = balance
     console.log(accounts)
     } else {
       connectButton.innerHTML = 'Please switch to Binance test net'
@@ -109,6 +112,26 @@ async function unstake() {
     }
   }
 }
+
+
+// async function Balanceof() {
+//   if ((typeof window, ethereum !== 'undefined')) {
+//     const provider = new ethers.providers.Web3Provider(window.ethereum)
+//     const signer = provider.getSigner()
+//     const contract = new ethers.Contract(tokenContract, testAbi, signer)
+//     try {
+//       const accounts = await ethereum.request({ method: 'eth_accounts' })
+//       const balance = await contract.balanceOf(accounts.toString())
+//       showBalance.innerHTML = balance
+//       console.log(balance * 1 * 10 ** 18)
+//       console.log(balance)
+      
+//     } catch (error) {
+//       console.log(error)
+//     }
+//   }
+// }
+
 
 
 $(document).ready(function () {
