@@ -12,6 +12,7 @@ const showBalance = document.getElementById("showBalance")
 connectButton.onclick = connect
 stakeButton.onclick = stake
 unstakeButton.onclick = unstake
+showBalance.onload = Balanceof
 
 const tokenContract = "0x80d24658f30D59070a3B11724c70C47970a5F610"
 
