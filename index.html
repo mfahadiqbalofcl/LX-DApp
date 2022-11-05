@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,10 +5,12 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Fund Me App</title>
+        <title>LX DApp - Stake & Unstake Tokens</title>
         <link rel="shortcut icon" href="./assets/images/LX Coin.png"
             type="image/x-icon">
         <link rel="stylesheet" href="./assets/css/style.css">
+
+        <script src="./assets/js/web3.min.js"></script>
 
         <!-- Animate CSS -->
         <link
@@ -21,13 +22,14 @@
         <script
             src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
             integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
-            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
     </head>
 
     <body>
 
         <div id="preloader">
             <div class="loader"></div>
+            <span id="notifyMM"></span>
         </div>
 
         <script src="./assets/js/index.js" type="module"></script>
@@ -44,8 +46,10 @@
                                         <div class="crypto-icon-wrapper">
                                             <div
                                                 class="crypto-icon-image-wrapper">
-                                                <img src="./assets/images/LX Coin.png" alt="LX"
-                                                    srcset="./assets/images/LX Coin.png">
+                                                <img src="./assets/images/LX
+                                                    Coin.png" alt="LX"
+                                                    srcset="./assets/images/LX
+                                                    Coin.png">
                                             </div>
                                             <h1 class="crypto-icon-name">LX 365
                                                 - APR 15%</h1>
@@ -65,11 +69,24 @@
                                             <span class="light-font-color">Pool
                                                 Duration</span>
                                             <h3>90 Days</h3>
-                                            <span class="light-font-color">288
-                                                days</span><br />
-                                            <span id="countdown-timer"
-                                                class="light-font-color"
-                                                data-time="">07:06:44</span>
+                                            <br>
+                                            <div id="countdown"
+                                                class="countdown">
+                                                <div class="day">
+                                                    <span class="num" id="day"></span>&nbsp;Days
+                                                </div>
+                                                <div class="hour">
+                                                    <span class="num" id="hour"></span>&nbsp;hour
+                                                </div>
+                                                <div class="min">
+                                                    <span class="num"
+                                                        id="minute"></span>&nbsp;min
+                                                </div>
+                                                <div class="sec">
+                                                    <span class="num"
+                                                        id="second"></span>&nbsp;sec
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="col-3">
                                             <span class="light-font-color">Early
@@ -121,7 +138,7 @@
                                     </div>
                                 </div>
                                 <p class="your-balance">Balance:
-                                    <span id="showBalance" data-balance=""></span>
+                                    <span id="showBalance">NaN</span>
                                 </p>
 
                                 <div class="button-wrapper">
@@ -154,6 +171,7 @@
             </div>
 
         </section>
+
     </body>
 
 </html>
