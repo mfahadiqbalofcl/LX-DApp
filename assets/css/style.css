@@ -59,6 +59,7 @@ body {
     z-index: 99;
     background-color: rgba(0, 0, 0, 0.8);
 }
+
 .loader {
     display: block;
     position: relative;
@@ -73,6 +74,20 @@ body {
     -webkit-animation: spin 2s linear infinite;
     animation: spin 2s linear infinite;
 }
+
+#notifyMM {
+    color: #9370DB;
+    display: none;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    font-style: italic;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .loader:before {
     content: "";
     position: absolute;
@@ -86,6 +101,7 @@ body {
     -webkit-animation: spin 3s linear infinite;
     animation: spin 3s linear infinite;
 }
+
 .loader:after {
     content: "";
     position: absolute;
@@ -99,24 +115,28 @@ body {
     -webkit-animation: spin 1.5s linear infinite;
     animation: spin 1.5s linear infinite;
 }
+
 @-webkit-keyframes spin {
-    0%   {
+    0% {
         -webkit-transform: rotate(0deg);
         -ms-transform: rotate(0deg);
         transform: rotate(0deg);
     }
+
     100% {
         -webkit-transform: rotate(360deg);
         -ms-transform: rotate(360deg);
         transform: rotate(360deg);
     }
 }
+
 @keyframes spin {
-    0%   {
+    0% {
         -webkit-transform: rotate(0deg);
         -ms-transform: rotate(0deg);
         transform: rotate(0deg);
     }
+
     100% {
         -webkit-transform: rotate(360deg);
         -ms-transform: rotate(360deg);
@@ -267,7 +287,6 @@ span.light-font-color-2 {
 
 p.your-balance {
     font-size: 1.5em;
-    text-align: right;
     padding: 0 1.5rem;
     color: #4f4e53;
 }
@@ -279,7 +298,7 @@ p.your-balance {
     padding: 3rem 2rem;
 }
 
-#stakeButton{
+#stakeButton {
     display: none;
     opacity: 0;
     transition: all 0.5s ease-in-out;
@@ -504,11 +523,11 @@ input#reset-button:hover {
     cursor: pointer;
 }
 
-.animate__animated.animate__flipInX{
+.animate__animated.animate__flipInX {
     animation-duration: 4s;
 }
 
-.animate__animated.animate__rubberBand{
+.animate__animated.animate__rubberBand {
     animation-duration: 3s;
     animation-iteration-count: infinite;
 }
