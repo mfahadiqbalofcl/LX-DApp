@@ -86,12 +86,12 @@ function listenForTransactionMine(transactionResponse, provider) {
 
 async function stake() {
   const amount = document.getElementById('standard').value
+    if (amount == 0) {
+    alert('Please input amount first')
+  }
   const new_amount = ethers.utils.parseUnits(amount.toString(), 18)
   const stakeDays = document.getElementById('stakeDays')
   const days = stakeDays.options[stakeDays.selectedIndex].value
-  if (amount == 0) {
-    alert('Please input amount first')
-  }
   console.log(`Funding with ${amount}...`)
   if ((typeof window, ethereum !== 'undefined')) {
     console.log('staking...')
