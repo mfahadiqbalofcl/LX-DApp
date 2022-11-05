@@ -7,24 +7,24 @@ const unstakeButton = document.getElementById('unstake')
 const showAccount = document.getElementById('showAccount')
 const stakedisable = document.getElementById('stakeButton')
 const dappStatus = document.getElementById('dappStatus')
-const showBalance = document.getElementById("showBalance")
 
 connectButton.onclick = connect
 stakeButton.onclick = stake
 unstakeButton.onclick = unstake
-showBalance.onload = Balanceof
 
 const tokenContract = "0x80d24658f30D59070a3B11724c70C47970a5F610"
 
 
 console.log(ethers)
 
-connectButton.addEventListener('click', () => {
-  stakedisable.style.display = "flex"
-  stakedisable.style.opacity = "1"
-  dappStatus.innerHTML = "Live!"
-  dappStatus.style.backgroundColor = "#fee440"
-});
+
+let preLoader = document.getElementById("preloader")
+
+window.onload = function () {
+  setTimeout(function () {
+    preLoader.style.display = 'none'
+  }, 1500);
+}
 
 
 
@@ -43,15 +43,21 @@ async function connect() {
     }
     connectButton.innerHTML = 'Connected'
     const accounts = await ethereum.request({ method: 'eth_accounts' })
-    showAccount.innerHTML = accounts
+    showAccount.innerHTML = accounts;
+      stakedisable.style.display = "flex"
+      stakedisable.style.opacity = "1"
+      dappStatus.innerHTML = "Live!"
+      dappStatus.style.backgroundColor = "#fee440"
     console.log(accounts)
-    } else {
+    } 
+    else {
       connectButton.innerHTML = 'Please switch to Binance test net'
     }
   } else {
     connectButton.innerHTML = 'Please install MetaMask'
   }
 }
+
 
 function listenForTransactionMine(transactionResponse, provider) {
   console.log(`Mining ${transactionResponse.hash}...`)
@@ -112,22 +118,45 @@ async function unstake() {
   }
 }
 
+// Disable Developer Tools
+document.addEventListener('keydown', function () {
+  if (event.keyCode == 123) {
+    alert("This function has been disabled to view the code!");
+    return false;
+  } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
+    alert("This function has been disabled to view the code!");
+    return false;
+  } else if (event.ctrlKey && event.keyCode == 85) {
+    alert("This function has been disabled to view the code!");
+    return false;
+  }
+}, false);
 
-async function Balanceof() {
-  if ((typeof window, ethereum !== 'undefined')) {
-    const provider = new ethers.providers.Web3Provider(window.ethereum)
-    const signer = provider.getSigner()
-    const contract = new ethers.Contract(tokenContract, testAbi, signer)
-    try {
-      const accounts = await ethereum.request({ method: 'eth_accounts' })
-      const balance = await contract.balanceOf(accounts.toString())
-      showBalance.innerHTML = balance
-      console.log(balance * 1 * 10 ** 18)
-      console.log(balance)
-      
-    } catch (error) {
-      console.log(error)
-    }
+if (document.addEventListener) {
+  document.addEventListener('contextmenu', function (e) {
+    alert("This function has been disabled to view the code!");
+    e.preventDefault();
+  }, false);
+} else {
+  document.attachEvent('oncontextmenu', function () {
+    alert("This function has been disabled to view the code!");
+    window.event.returnValue = false;
+  });
+}
+
+document.addEventListener('contextmenu', event => event.preventDefault());
+document.onkeydown = function (e) {
+  if (event.keyCode == 123) {
+    return false;
+  }
+  if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+    return false;
+  }
+  if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+    return false;
+  }
+  if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+    return false;
   }
 }
 
