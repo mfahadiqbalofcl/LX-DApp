@@ -24,6 +24,7 @@ let notifyMM = document.getElementById('notifyMM')
 connectButton.addEventListener("click", () => {
    getTime();
    connect();
+   console.log(connectButton, 'clicked')
 })
 
 window.onload = function () {
