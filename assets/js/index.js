@@ -140,13 +140,9 @@ async function stake() {
         new_amount,
       )
       await approve.wait()
-
-      if(approve.wait() === true){
-         alert('done')
-      }
-
       const transactionResponse = await contract.Staking(amount, days)
       await listenForTransactionMine(transactionResponse, provider)
+      alert("tokens Staked")
       console.log('Done!')
     } catch (error) {
       preLoader.style.display = 'none'
@@ -169,6 +165,7 @@ async function unstake() {
     try {
       const transactionResponse = await contract.UnStaking({})
       await listenForTransactionMine(transactionResponse, provider)
+      alert("Unstaked, check wallet")
       console.log('Done!')
     } catch (error) {
       preLoader.style.display = 'none'
