@@ -32,7 +32,7 @@ window.onload = function () {
   setTimeout(function () {
     preLoader.style.display = 'none'
     document.body.style.overflow = 'auto'
-  }, 1500)
+  })
 }
 
 async function connect() {
