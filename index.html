@@ -1,168 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>LX DApp - Stake & Unstake Tokens</title>
-        <link rel="shortcut icon" href="./assets/images/LX Coin.png"
-            type="image/x-icon">
-        <link rel="stylesheet" href="./assets/css/style.css">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LX DApp - Stake & Unstake Tokens</title>
+    <link rel="shortcut icon" href="./assets/images/LX Coin.png" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/css/style.css">
 
-        <script src="./assets/js/web3.min.js"></script>
+    <script src="./assets/js/web3.min.js"></script>
 
-        <!-- Animate CSS -->
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-            async />
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" async />
 
-        <!-- Jquery -->
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
-            integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
-            crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
-    </head>
+    <!-- Jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+</head>
 
-    <body>
+<body>
 
-        <div id="preloader">
-            <div class="loader"></div>
-            <span id="notifyMM"></span>
-        </div>
+    <div id="preloader">
+        <div class="loader"></div>
+        <span id="notifyMM"></span>
+    </div>
 
-        <script src="./assets/js/index.js" type="module"></script>
-        <section>
-            <div class="container">
+    <script src="./assets/js/index.js" type="module"></script>
+    <section>
+        <div class="container">
 
-                <div class="row row-s">
-                    <div class="col-7 col-s-12">
-                        <div class="fund-me-app-wrapper animate__animated
+            <div class="row row-s">
+                <div class="col-7 col-s-12">
+                    <div class="fund-me-app-wrapper animate__animated
                             animate__bounceInLeft">
-                            <div class="crypto-main-wrapper">
-                                <div class="row">
-                                    <div class="col-7">
-                                        <div class="crypto-icon-wrapper">
-                                            <div
-                                                class="crypto-icon-image-wrapper">
-                                                <img src="./assets/images//LX Coin.png" alt="LX"
-                                                    srcset="./assets/images//LX Coin.png">
-                                            </div>
-                                            <h1 class="crypto-icon-name">LX 365
-                                                - APR 15%</h1>
+                        <div class="crypto-main-wrapper">
+                            <div class="row">
+                                <div class="col-7">
+                                    <div class="crypto-icon-wrapper">
+                                        <div class="crypto-icon-image-wrapper">
+                                            <img src="./assets/images//LX Coin.png" alt="LX"
+                                                srcset="./assets/images//LX Coin.png">
                                         </div>
+                                        <h1 class="crypto-icon-name">LX 365
+                                            - APR 15%</h1>
+                                    </div>
 
+                                </div>
+                                <div class="col-3">
+                                    <div class="status-label
+                                            animate__animated animate__flipInX">
+                                        <span id="dappStatus">Offline!</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="crypto-data-wrapper">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <span class="light-font-color">Pool
+                                            Duration</span>
+                                        <h3>30 Days</h3>
+                                        ----------------
+                                        <h3>90 Days</h3>
+                                        ----------------
+                                        <h3>180 Days</h3>
+                                        ----------------
+                                        <h3>365 Days</h3>
                                     </div>
                                     <div class="col-3">
-                                        <div class="status-label
-                                            animate__animated animate__flipInX">
-                                            <span id="dappStatus">Offline!</span>
-                                        </div>
+                                        <span class="light-font-color">Early
+                                            Witdrawal</span><br />
+                                        <span class="light-font-color">fee</span>
+                                        <h3>25%</h3>
+                                    </div>
+                                    <div class="col-3">
+                                        <span class="light-font-color">Unlock Time</span><br />
+                                        <h3 id="unlockTime">NaN</h3>
                                     </div>
                                 </div>
-                                <div class="crypto-data-wrapper">
-                                    <div class="row">
-                                        <div class="col-3">
-                                            <span class="light-font-color">Pool
-                                                Duration</span>
-                                            <h3>30 Days</h3>
-                                            ----------------
-                                            <h3>90 Days</h3>
-                                            ----------------
-                                            <h3>180 Days</h3>
-                                            ----------------
-                                            <h3>365 Days</h3>
-                                        </div>
-                                        <div class="col-3">
-                                            <span class="light-font-color">Early
-                                                Witdrawal</span><br />
-                                            <span class="light-font-color">fee</span>
-                                            <h3>25%</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="stake-wrapper">
-                                <div class="contract-address">
-                                    <h3>Account: <span
-                                            class="light-font-color"
-                                            id="showAccount">NaN</span></h3>
-                                    <br>
-                                </div>
-                                <h3>What is staking?</h3>
-                                <p class="light-font-color-2">Staking locks up
-                                    your assets to participate and help maintain
-                                    the security of that network's blockchain.
-                                    In exchange for locking up your assets and
-                                    participating in the network validation,
-                                    validators receive rewards in that
-                                    cryptocurrency known as staking rewards</p>
-                                <br>
-                                <p class="light-font-color-2">Note: Connect to
-                                    wallet to stake the token between 30 and 365 days</p>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="col-3 col-s-12">
-                        <div class="fund-me-app-wrapper animate__animated
-                            animate__bounceInRight">
-                            <div class="sidebar-wrapper">
-                                <h1>Amount</h1>
-                                <div class="stake-amount-wrapper">
-                                    <div class="amount-quantity-wrapper">
-                                        <input class="input-number-decrement"
-                                            value="-" data-min="0">
-                                        <input id="standard"
-                                            class="input-number" type="text"
-                                            value="0">
-                                        <input class="input-number-increment"
-                                            value="+" data-max="999999">
-                                    </div>
-                                    <div class="stake-per-wrapper">
-                                        <span>Please enter your amount</span>
-                                    </div>
-                                </div>
-                                <p class="your-balance">Balance:
-                                    <span id="showBalance">NaN</span>
-                                </p>
-
-                                <div class="button-wrapper">
-                                    <button id="connectButton"
-                                        class="connect-button" type="button"
-                                        data-connect="">Connect</button>
-                                </div>
-
-                                <div class="select">
-                                    <select id="stakeDays">
-                                        <option class="stakeDays" value="30">30
-                                            Days</option>
-                                        <option class="stakeDays" value="90">90
-                                            Days</option>
-                                        <option class="stakeDays" value="180">180
-                                            Days</option>
-                                        <option class="stakeDays" value="365">365
-                                            Days</option>
-                                    </select>
-                                </div>
-
-                                <div id="stakeButton" class="button-wrapper">
-                                    <button id="stake" class="secondary-button
-                                        animate__animated animate__swing">stake</button>
-                                    <button id="unstake"
-                                        class="secondary-button
-                                        animate__animated animate__swing">unstake</button>
-                                </div>
+                        <div class="stake-wrapper">
+                            <div class="contract-address">
+                                <h3>Account: <span class="light-font-color" id="showAccount">NaN</span></h3>
+                                <br>
                             </div>
+                            <h3>What is staking?</h3>
+                            <p class="light-font-color-2">Staking locks up
+                                your assets to participate and help maintain
+                                the security of that network's blockchain.
+                                In exchange for locking up your assets and
+                                participating in the network validation,
+                                validators receive rewards in that
+                                cryptocurrency known as staking rewards</p>
+                            <br>
+                            <p class="light-font-color-2">Note: Connect to
+                                wallet to stake the token between 30 and 365 days</p>
                         </div>
                     </div>
                 </div>
 
+                <div class="col-3 col-s-12">
+                    <div class="fund-me-app-wrapper animate__animated
+                            animate__bounceInRight">
+                        <div class="sidebar-wrapper">
+                            <h1>Amount</h1>
+                            <div class="stake-amount-wrapper">
+                                <div class="amount-quantity-wrapper">
+                                    <input class="input-number-decrement" value="-" data-min="0">
+                                    <input id="standard" class="input-number" type="text" value="0">
+                                    <input class="input-number-increment" value="+" data-max="999999">
+                                </div>
+                                <div class="stake-per-wrapper">
+                                    <span>Please enter your amount</span>
+                                </div>
+                            </div>
+                            <p class="your-balance">Balance:
+                                <span id="showBalance">NaN</span>
+                            </p>
+
+                            <div class="button-wrapper">
+                                <button id="connectButton" class="connect-button" type="button"
+                                    data-connect="">Connect</button>
+                            </div>
+
+                            <div class="select">
+                                <select id="stakeDays">
+                                    <option class="stakeDays" value="30">30
+                                        Days</option>
+                                    <option class="stakeDays" value="90">90
+                                        Days</option>
+                                    <option class="stakeDays" value="180">180
+                                        Days</option>
+                                    <option class="stakeDays" value="365">365
+                                        Days</option>
+                                </select>
+                            </div>
+
+                            <div id="stakeButton" class="button-wrapper">
+                                <button id="stake" class="secondary-button
+                                        animate__animated animate__swing">stake</button>
+                                <button id="unstake" class="secondary-button
+                                        animate__animated animate__swing">unstake</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-        </section>
+        </div>
 
-    </body>
+    </section>
+
+</body>
 
 </html>
