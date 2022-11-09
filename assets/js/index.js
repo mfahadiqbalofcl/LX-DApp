@@ -146,7 +146,6 @@ async function unstake() {
       notifyMM.style.display = 'none'
       document.body.style.overflow = 'auto'
       console.log(error)
-      alert('Please first stake Tokens to unstake')
     }
   }
 }
