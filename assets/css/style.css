@@ -242,9 +242,9 @@ span.light-font-color-2 {
     color: #4f4e53;
 }
 
-.main-note{
-    color: crimson;
-    font-weight: 600;
+.note-style{
+    color: rgb(250, 0, 50);
+    font-style: italic;
 }
 
 .stake-wrapper {
