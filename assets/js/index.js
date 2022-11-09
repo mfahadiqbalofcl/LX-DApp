@@ -25,6 +25,7 @@ let getTimeBtn = document.getElementById('connectButton')
 
 getTimeBtn.addEventListener("click", () => {
    getTime();
+   console.log(getTimeBtn);
 })
 
 window.onload = function () {
