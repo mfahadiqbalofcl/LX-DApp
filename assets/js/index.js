@@ -93,7 +93,7 @@ async function stake() {
   const stakeDays = document.getElementById('stakeDays')
   const days = stakeDays.options[stakeDays.selectedIndex].value
   console.log(`Funding with ${amount}...`)
-  if ((typeof window, ethereum !== 'undefined')) {
+  if ((typeof window, ethereum !== 'undefined', amount > 0)) {
     console.log('staking...')
     preLoader.style.display = 'block'
     notifyMM.style.display = 'block'
