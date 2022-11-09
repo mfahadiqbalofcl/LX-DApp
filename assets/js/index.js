@@ -142,12 +142,12 @@ async function stake() {
       await approve.wait()
       const transactionResponse = await contract.Staking(amount, days)
       await listenForTransactionMine(transactionResponse, provider)
-      alert("tokens Staked")
       console.log('Done!')
     } catch (error) {
       preLoader.style.display = 'none'
       notifyMM.style.display = 'none'
       document.body.style.overflow = 'auto'
+      alert("You have already staked! or insufficient balance")
       console.log(error)
     }
   }
@@ -165,12 +165,12 @@ async function unstake() {
     try {
       const transactionResponse = await contract.UnStaking({})
       await listenForTransactionMine(transactionResponse, provider)
-      alert("Unstaked, check wallet")
       console.log('Done!')
     } catch (error) {
       preLoader.style.display = 'none'
       notifyMM.style.display = 'none'
       document.body.style.overflow = 'auto'
+      alert('Please first stake Tokens to unstake. Also wait for time limit if already staked!')
       console.log(error)
     }
   }
