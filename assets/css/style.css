@@ -242,6 +242,11 @@ span.light-font-color-2 {
     color: #4f4e53;
 }
 
+.main-note{
+    color: crimson;
+    font-weight: 600;
+}
+
 .stake-wrapper {
     padding: 5rem 3rem 8rem;
     font-size: 1.5em;
