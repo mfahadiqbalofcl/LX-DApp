@@ -154,12 +154,6 @@ async function unstake() {
 }
 
 // countdown timer
-stakeButton.addEventListener("click", event => {
-   const showTime = document.getElementById('remainingDays'); 
-   const selectedDays = showTime.options[showTime.selectedIndex].value
-   showTime.innerHTML = selectedDays
-   
-})
 
 
 // Disable Developer Tools
