@@ -86,9 +86,14 @@ async function getTime() {
       const users = await contract.Users(accounts.toString())
 
       let unixTimestamp = parseInt(users.timestamp)
+      if (unixTimestamp > 0){
       let date = new Date(unixTimestamp * 1000)
       timebutton.innerHTML = date
       console.log(date)
+      }
+      else{
+         timebutton.innerHTML = 'NaN'
+      }
     } 
     catch (error) {
       console.log(error)
