@@ -10,7 +10,6 @@ const dappStatus = document.getElementById('dappStatus')
 const showBalance = document.getElementById('showBalance')
 const timebutton = document.getElementById('unlockTime')
 
-connectButton.onclick = connect
 stakeButton.onclick = stake
 unstakeButton.onclick = unstake
 
@@ -21,11 +20,10 @@ console.log(ethers)
 let preLoader = document.getElementById('preloader')
 let notifyMM = document.getElementById('notifyMM')
 
-let getTimeBtn = document.getElementById('connectButton')
 
-getTimeBtn.addEventListener("click", () => {
+connectButton.addEventListener("click", () => {
    getTime();
-   console.log(getTimeBtn);
+   connect();
 })
 
 window.onload = function () {
