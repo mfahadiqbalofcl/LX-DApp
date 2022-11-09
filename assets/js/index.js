@@ -88,7 +88,9 @@ async function getTime() {
       let unixTimestamp = parseInt(users.timestamp)
       if (unixTimestamp > 0){
       let date = new Date(unixTimestamp * 1000)
-      timebutton.innerHTML = date
+      const humanDateFormat = date.toLocaleString()
+
+      timebutton.innerHTML = humanDateFormat
       console.log(date)
       }
       else{
