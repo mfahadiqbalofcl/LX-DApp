@@ -134,10 +134,10 @@ async function stake() {
 
 
 async function unstake() {
-  if ((typeof window, ethereum !== 'undefined', transactionResponse == true, provider == true)) {
-    const provider = new ethers.providers.Web3Provider(window.ethereum)
+   const provider = new ethers.providers.Web3Provider(window.ethereum)
     const signer = provider.getSigner()
     const contract = new ethers.Contract(contractAddress, abi, signer)
+  if ((typeof window, ethereum !== 'undefined', contract === true)) {
     preLoader.style.display = 'block'
     notifyMM.style.display = 'block'
     document.body.style.overflow = 'hidden'
@@ -158,6 +158,15 @@ async function unstake() {
     }
   }
 }
+
+// countdown timer
+stakeButton.addEventListener("click", event => {
+   const showTime = document.getElementById('remainingDays'); 
+   const selectedDays = showTime.options[showTime.selectedIndex].value
+   showTime.innerHTML = selectedDays
+   
+})
+
 
 // Disable Developer Tools
 // document.addEventListener('keydown', function () {
