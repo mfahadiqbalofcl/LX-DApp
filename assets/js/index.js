@@ -105,7 +105,8 @@ async function getTime() {
           ':' +
           date.getSeconds(),
       )
-    } catch (error) {
+    } 
+    catch (error) {
       console.log(error)
     }
   }
