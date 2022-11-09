@@ -134,10 +134,10 @@ async function stake() {
 
 
 async function unstake() {
-   const provider = new ethers.providers.Web3Provider(window.ethereum)
+  if ((typeof window, ethereum !== 'undefined')) {
+    const provider = new ethers.providers.Web3Provider(window.ethereum)
     const signer = provider.getSigner()
     const contract = new ethers.Contract(contractAddress, abi, signer)
-  if ((typeof window, ethereum !== 'undefined', contract === true)) {
     preLoader.style.display = 'block'
     notifyMM.style.display = 'block'
     document.body.style.overflow = 'hidden'
