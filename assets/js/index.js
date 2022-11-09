@@ -103,6 +103,7 @@ async function getTime() {
   }
 }
 
+
 function listenForTransactionMine(transactionResponse, provider) {
   console.log(`Mining ${transactionResponse.hash}...`)
   //listen for transaction to finish
@@ -151,6 +152,7 @@ async function stake() {
       await listenForTransactionMine(transactionResponse, provider)
       console.log('Done!')
       alert('You have staked the tokens Successfuly!')
+      stakeButton.style.display = "none"
     } catch (error) {
       preLoader.style.display = 'none'
       notifyMM.style.display = 'none'
@@ -182,9 +184,6 @@ async function unstake() {
       alert('Please first stake Tokens to unstake. Also wait for time limit if already staked!')
       console.log(error)
     }
-  }
-  else{
-   alert
   }
 }
 
