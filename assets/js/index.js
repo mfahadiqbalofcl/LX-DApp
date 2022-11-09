@@ -87,24 +87,8 @@ async function getTime() {
 
       let unixTimestamp = parseInt(users.timestamp)
       let date = new Date(unixTimestamp * 1000)
-      console.log('Unix Timestamp:', unixTimestamp)
-      console.log('Date Timestamp:', date.getTime())
-      console.log(date)
       timebutton.innerHTML = date
-      console.log(
-        'Date: ' +
-          date.getDate() +
-          '/' +
-          (date.getMonth() + 1) +
-          '/' +
-          date.getFullYear() +
-          ' ' +
-          date.getHours() +
-          ':' +
-          date.getMinutes() +
-          ':' +
-          date.getSeconds(),
-      )
+      console.log(date)
     } 
     catch (error) {
       console.log(error)
@@ -157,6 +141,10 @@ async function stake() {
       )
       await approve.wait()
 
+      if(approve.wait() === true){
+         alert('done')
+      }
+
       const transactionResponse = await contract.Staking(amount, days)
       await listenForTransactionMine(transactionResponse, provider)
       console.log('Done!')
@@ -165,7 +153,6 @@ async function stake() {
       notifyMM.style.display = 'none'
       document.body.style.overflow = 'auto'
       console.log(error)
-      alert("You have already staked! or insufficient balance")
     }
   }
 }
@@ -188,7 +175,6 @@ async function unstake() {
       notifyMM.style.display = 'none'
       document.body.style.overflow = 'auto'
       console.log(error)
-       alert('Please first stake Tokens to unstake. Also wait for time limit if already staked!')
     }
   }
 }
