@@ -165,6 +165,7 @@ async function stake() {
       notifyMM.style.display = 'none'
       document.body.style.overflow = 'auto'
       console.log(error)
+      alert("You have already staked! or insufficient balance")
     }
   }
 }
@@ -187,6 +188,7 @@ async function unstake() {
       notifyMM.style.display = 'none'
       document.body.style.overflow = 'auto'
       console.log(error)
+       alert('Please first stake Tokens to unstake. Also wait for time limit if already staked!')
     }
   }
 }
