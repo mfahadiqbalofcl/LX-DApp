@@ -144,7 +144,7 @@ async function stake() {
     try {
       const tokenContract = testTokenContract.connect(signer)
       const approve = await tokenContract.approve(
-        '0xdb9FB447a2E0dd7C1B4e78dA38eA1A03D9E973b4',
+        '0xb6d49F629eE46E733C4Bc3d0a9c376c9fBE0D0F0',
         new_amount,
       )
       await approve.wait()
