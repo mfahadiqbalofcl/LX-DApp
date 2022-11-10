@@ -43,7 +43,7 @@ async function connect() {
     })
 
     console.log('This is Chain ID: ', chainid)
-    if ((chainid === '0x38', (typeof window.ethereum !== 'undefined'))) {
+    if ((typeof window.ethereum !== 'undefined', chainid === '0x38')) {
       try {
         await ethereum.request({ method: 'eth_requestAccounts' })
       } catch (error) {
