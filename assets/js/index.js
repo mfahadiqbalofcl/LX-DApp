@@ -32,7 +32,6 @@ window.onload = function () {
   setTimeout(function () {
     preLoader.style.display = 'none'
     document.body.style.overflow = 'auto'
-    confirm('This app is just for demo purposes')
   })
 }
 
