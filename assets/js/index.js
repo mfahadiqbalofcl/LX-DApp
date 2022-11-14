@@ -32,6 +32,7 @@ window.onload = function () {
   setTimeout(function () {
     preLoader.style.display = 'none'
     document.body.style.overflow = 'auto'
+    confirm('This app is just for demo purposes')
   })
 }
 
@@ -43,7 +44,7 @@ async function connect() {
     })
 
     console.log('This is Chain ID: ', chainid)
-    if ((typeof window.ethereum !== 'undefined', chainid === '0x38')) {
+    if ((typeof window.ethereum !== 'undefined', chainid === '0x97')) {
       try {
         await ethereum.request({ method: 'eth_requestAccounts' })
       } catch (error) {
@@ -207,47 +208,47 @@ async function unstake() {
   }
 }
 
-// Disable Developer Tools
-// document.addEventListener('keydown', function () {
-//   if (event.keyCode == 123) {
-//     alert("This function has been disabled to view the code!");
-//     return false;
-//   } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
-//     alert("This function has been disabled to view the code!");
-//     return false;
-//   } else if (event.ctrlKey && event.keyCode == 85) {
-//     alert("This function has been disabled to view the code!");
-//     return false;
-//   }
-// }, false);
+Disable Developer Tools
+document.addEventListener('keydown', function () {
+  if (event.keyCode == 123) {
+    alert("This function has been disabled to view the code!");
+    return false;
+  } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
+    alert("This function has been disabled to view the code!");
+    return false;
+  } else if (event.ctrlKey && event.keyCode == 85) {
+    alert("This function has been disabled to view the code!");
+    return false;
+  }
+}, false);
 
-// if (document.addEventListener) {
-//   document.addEventListener('contextmenu', function (e) {
-//     alert("This function has been disabled to view the code!");
-//     e.preventDefault();
-//   }, false);
-// } else {
-//   document.attachEvent('oncontextmenu', function () {
-//     alert("This function has been disabled to view the code!");
-//     window.event.returnValue = false;
-//   });
-// }
+if (document.addEventListener) {
+  document.addEventListener('contextmenu', function (e) {
+    alert("This function has been disabled to view the code!");
+    e.preventDefault();
+  }, false);
+} else {
+  document.attachEvent('oncontextmenu', function () {
+    alert("This function has been disabled to view the code!");
+    window.event.returnValue = false;
+  });
+}
 
-// document.addEventListener('contextmenu', event => event.preventDefault());
-// document.onkeydown = function (e) {
-//   if (event.keyCode == 123) {
-//     return false;
-//   }
-//   if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
-//     return false;
-//   }
-//   if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
-//     return false;
-//   }
-//   if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
-//     return false;
-//   }
-// }
+document.addEventListener('contextmenu', event => event.preventDefault());
+document.onkeydown = function (e) {
+  if (event.keyCode == 123) {
+    return false;
+  }
+  if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+    return false;
+  }
+  if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+    return false;
+  }
+  if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+    return false;
+  }
+}
 
 $(document).ready(function () {
   /*	Disables mobile keyboard from displaying when clicking +/- inputs */
