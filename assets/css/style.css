@@ -174,7 +174,8 @@ body {
 
 .fund-me-app-wrapper {
     overflow: hidden;
-    min-height: 65rem;
+    height: 68rem;
+    min-height: 68rem;
     border-radius: 3rem;
     background-color: var(--bg-secondary);
 }
