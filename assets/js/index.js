@@ -9,6 +9,8 @@ const stakedisable = document.getElementById('stakeButton')
 const dappStatus = document.getElementById('dappStatus')
 const showBalance = document.getElementById('showBalance')
 const timebutton = document.getElementById('unlockTime')
+const aprPer = document.getElementById('lxApr')
+const stakeDays = document.getElementById('stakeDays')
 
 stakeButton.onclick = stake
 unstakeButton.onclick = unstake
@@ -20,11 +22,9 @@ console.log(ethers)
 let preLoader = document.getElementById('preloader')
 let notifyMM = document.getElementById('notifyMM')
 
-
-connectButton.addEventListener("click", () => {
-   getTime();
-   connect();
-   console.log(connectButton, 'clicked')
+connectButton.addEventListener('click', () => {
+  getTime()
+  connect()
 })
 
 window.onload = function () {
@@ -77,7 +77,7 @@ async function connect() {
 }
 
 async function getTime() {
-  if ((typeof window.ethereum !== 'undefined')) {
+  if (typeof window.ethereum !== 'undefined') {
     const provider = new ethers.providers.Web3Provider(window.ethereum)
     const signer = provider.getSigner()
     const contract = new ethers.Contract(contractAddress, abi, signer)
@@ -86,23 +86,20 @@ async function getTime() {
       const users = await contract.Users(accounts.toString())
 
       let unixTimestamp = parseInt(users.timestamp)
-      if (unixTimestamp > 0){
-      let date = new Date(unixTimestamp * 1000)
-      const humanDateFormat = date.toLocaleString()
+      if (unixTimestamp > 0) {
+        let date = new Date(unixTimestamp * 1000)
+        const humanDateFormat = date.toLocaleString()
 
-      timebutton.innerHTML = humanDateFormat
-      console.log(date)
+        timebutton.innerHTML = humanDateFormat
+        console.log(date)
+      } else {
+        timebutton.innerHTML = 'NaN'
       }
-      else{
-         timebutton.innerHTML = 'NaN'
-      }
-    } 
-    catch (error) {
+    } catch (error) {
       console.log(error)
     }
   }
 }
-
 
 function listenForTransactionMine(transactionResponse, provider) {
   console.log(`Mining ${transactionResponse.hash}...`)
@@ -118,16 +115,34 @@ function listenForTransactionMine(transactionResponse, provider) {
   })
 }
 
+stakeDays.addEventListener('change', () => {
+  if (stakeDays.value <= 30) {
+    aprPer.innerHTML = '8%'
+    aprPer.setAttribute('data-lx-apr', '8%')
+  } else if (stakeDays.value <= 90) {
+    aprPer.innerHTML = '10%'
+    aprPer.setAttribute('data-lx-apr', '10%')
+  } else if (stakeDays.value <= 180) {
+    aprPer.innerHTML = '13%'
+    aprPer.setAttribute('data-lx-apr', '13%')
+  } else if (stakeDays.value <= 365) {
+    aprPer.innerHTML = '18%'
+    aprPer.setAttribute('data-lx-apr', '18%')
+  } else {
+    alert('something is happening wrong')
+  }
+})
+
 async function stake() {
   const amount = document.getElementById('standard').value
   if (amount == 0) {
     alert('Please input amount first')
   }
-  const new_amount = ethers.utils.parseUnits(amount.toString(), 18)
-  const stakeDays = document.getElementById('stakeDays')
-  const days = stakeDays.options[stakeDays.selectedIndex].value
-  console.log(`Funding with ${amount}...`)
   if ((typeof window.ethereum !== 'undefined', amount >= 1)) {
+    const new_amount = ethers.utils.parseUnits(amount.toString(), 18)
+    const days = stakeDays.options[stakeDays.selectedIndex].value
+    console.log('Selected Days', days)
+    console.log(`Funding with ${amount}...`)
     console.log('staking...')
     preLoader.style.display = 'block'
     notifyMM.style.display = 'block'
@@ -144,7 +159,7 @@ async function stake() {
     try {
       const tokenContract = testTokenContract.connect(signer)
       const approve = await tokenContract.approve(
-        '0xb6d49F629eE46E733C4Bc3d0a9c376c9fBE0D0F0',
+        '0xf6F5d8881689c75e6Ea9Ee96DEC5272B7451c3fe',
         new_amount,
       )
       await approve.wait()
@@ -159,13 +174,13 @@ async function stake() {
       notifyMM.style.display = 'none'
       document.body.style.overflow = 'auto'
       console.log(error)
-      alert("You have already staked! or insufficient balance")
+      alert('You have already staked! or insufficient balance')
     }
   }
 }
 
 async function unstake() {
-  if ((typeof window.ethereum !== 'undefined')) {
+  if (typeof window.ethereum !== 'undefined') {
     const provider = new ethers.providers.Web3Provider(window.ethereum)
     const signer = provider.getSigner()
     const contract = new ethers.Contract(contractAddress, abi, signer)
@@ -184,54 +199,55 @@ async function unstake() {
       preLoader.style.display = 'none'
       notifyMM.style.display = 'none'
       document.body.style.overflow = 'auto'
-      alert('Please first stake Tokens to unstake. Also wait for time limit if already staked!')
+      alert(
+        'Please first stake Tokens to unstake. Also wait for time limit if already staked!',
+      )
       console.log(error)
     }
   }
 }
 
 // Disable Developer Tools
+// document.addEventListener('keydown', function () {
+//   if (event.keyCode == 123) {
+//     alert("This function has been disabled to view the code!");
+//     return false;
+//   } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
+//     alert("This function has been disabled to view the code!");
+//     return false;
+//   } else if (event.ctrlKey && event.keyCode == 85) {
+//     alert("This function has been disabled to view the code!");
+//     return false;
+//   }
+// }, false);
 
-document.addEventListener('keydown', function () {
-  if (event.keyCode == 123) {
-    alert("This function has been disabled to view the code!");
-    return false;
-  } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
-    alert("This function has been disabled to view the code!");
-    return false;
-  } else if (event.ctrlKey && event.keyCode == 85) {
-    alert("This function has been disabled to view the code!");
-    return false;
-  }
-}, false);
+// if (document.addEventListener) {
+//   document.addEventListener('contextmenu', function (e) {
+//     alert("This function has been disabled to view the code!");
+//     e.preventDefault();
+//   }, false);
+// } else {
+//   document.attachEvent('oncontextmenu', function () {
+//     alert("This function has been disabled to view the code!");
+//     window.event.returnValue = false;
+//   });
+// }
 
-if (document.addEventListener) {
-  document.addEventListener('contextmenu', function (e) {
-    alert("This function has been disabled to view the code!");
-    e.preventDefault();
-  }, false);
-} else {
-  document.attachEvent('oncontextmenu', function () {
-    alert("This function has been disabled to view the code!");
-    window.event.returnValue = false;
-  });
-}
-
-document.addEventListener('contextmenu', event => event.preventDefault());
-document.onkeydown = function (e) {
-  if (event.keyCode == 123) {
-    return false;
-  }
-  if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
-    return false;
-  }
-  if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
-    return false;
-  }
-  if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
-    return false;
-  }
-}
+// document.addEventListener('contextmenu', event => event.preventDefault());
+// document.onkeydown = function (e) {
+//   if (event.keyCode == 123) {
+//     return false;
+//   }
+//   if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+//     return false;
+//   }
+//   if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+//     return false;
+//   }
+//   if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+//     return false;
+//   }
+// }
 
 $(document).ready(function () {
   /*	Disables mobile keyboard from displaying when clicking +/- inputs */

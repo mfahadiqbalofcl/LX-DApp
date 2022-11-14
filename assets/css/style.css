@@ -43,6 +43,10 @@ html {
 }
 
 body {
+    background-image: url(../images/LX\ Background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     background-color: var(--bg-primary);
     color: var(--primary-color);
     font-family: Arial, Helvetica, sans-serif;
@@ -176,6 +180,11 @@ body {
 }
 
 .crypto-main-wrapper {
+    background-image: url(../images/LX\ Header\ Background.png);
+    background-repeat: no-repeat;
+    background-size: 35%;
+    background-origin: border-box;
+    background-position: 97% 98%;
     background-color: var(--bg-main);
     padding: 4rem 3rem 5rem 3rem;
 }
