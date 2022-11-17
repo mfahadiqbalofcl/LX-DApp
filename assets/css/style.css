@@ -53,6 +53,12 @@ body {
     overflow-x: hidden !important;
 }
 
+h2, h3{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 /* Preloader */
 #preloader {
     position: fixed;
