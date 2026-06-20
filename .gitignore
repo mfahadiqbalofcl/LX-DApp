@@ -1,0 +1,11 @@
+.DS_Store
+/node_modules
+/.next/
+/out/
+/build
+/dist
+*.log
+npm-debug.log*
+.env
+.env.*
+!.env.example
