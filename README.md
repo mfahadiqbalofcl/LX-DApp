@@ -12,10 +12,10 @@ A lightweight Web3 token-staking dApp for the **LX** token on **Binance Smart Ch
 - Connect an injected wallet (MetaMask) and verify the user is on BSC Mainnet (chain ID `0x38`)
 - Display the connected account and its LX token balance
 - Stake LX tokens with a selectable lock duration and tiered APR:
-  - up to 30 days &rarr; 8%
-  - up to 90 days &rarr; 10%
-  - up to 180 days &rarr; 13%
-  - up to 365 days &rarr; 18%
+  - up to 30 days → 8%
+  - up to 90 days → 10%
+  - up to 180 days → 13%
+  - up to 365 days → 18%
 - Unstake once the lock period has elapsed
 - Shows the unlock timestamp for the active stake
 
