@@ -1,6 +1,6 @@
 # LX-DApp
 
-A lightweight Web3 token-staking dApp for the **LX** token on **Binance Smart Chain (BSC Mainnet)**. Connect a wallet, stake LX tokens for a fixed term, earn tiered APR, and unstake when the lock period ends.
+A lightweight Web3 token-staking dApp for the LX token on Binance Smart Chain (BSC Mainnet). Connect a wallet, stake LX tokens for a fixed term, earn tiered APR, and unstake when the lock period ends.
 
 > Live demo: https://dapp-jet-two.vercel.app
 
@@ -21,14 +21,14 @@ A lightweight Web3 token-staking dApp for the **LX** token on **Binance Smart Ch
 
 ## Tech stack
 
-- Plain HTML, CSS, and vanilla JavaScript (ES modules) — no build step
+- Plain HTML, CSS, and vanilla JavaScript (ES modules), no build step
 - [ethers.js v5.6](https://docs.ethers.org/v5/) (bundled as `assets/js/ethers-5.6.esm.min.js`) for on-chain calls
 - jQuery (CDN) for small UI helpers
 - Two on-chain contracts on BSC Mainnet:
   - Staking contract: `0xb6d49F629eE46E733C4Bc3d0a9c376c9fBE0D0F0`
   - LX token (ERC-20): `0xf6F5d8881689c75e6Ea9Ee96DEC5272B7451c3fe`
 
-> All addresses above are public on-chain identifiers — there are no private keys or secrets in this repository, and none are required to run the front end.
+> All addresses above are public on-chain identifiers. There are no private keys or secrets in this repository, and none are required to run the front end.
 
 ## Running locally
 
@@ -42,7 +42,7 @@ yarn install
 npx http-server . -p 8080
 ```
 
-Then open http://localhost:8080 in a browser with MetaMask installed and switched to **BSC Mainnet**.
+Then open http://localhost:8080 in a browser with MetaMask installed and switched to BSC Mainnet.
 
 ## Project structure
 
